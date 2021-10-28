@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>HTML Video Player</title>
+		<link rel="stylesheet" href="style.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	</head>
+	<body>
+		<div class="player">
+			<video class="player__video viewer" src="652333414.mp4"></video>
+
+			<div class="player__controls bg--dark">
+				<div class="progress">
+					<div class="progress__filled"></div>
+				</div>
+				<button class="player__button toggle" title="Play/Pause (Space)">►</button>
+				<button class="player__button" title="Mute (M)" name="volume">🔊</button>
+				<input type="range" name="volume" class="player__slider" min="0" max="1" step="0.05" value="1" title="Volume" />
+				<input type="range" name="playbackRate" class="player__slider" min="0.5" max="2" step="0.25" value="1" title="Speed" />
+				<button data-skip="-5" class="player__button">« 5s</button>
+				<button data-skip="5" class="player__button">5s »</button>
+				<div class="duration__container">
+					<div id="video__curent" class="text--white timer">00:00</div>
+					<div class="text--white timer">/</div>
+					<div id="video__end" class="text--white timer">00:00</div>
+				</div>
+				<button class="player__button player__fullscreen" title="Fullscreen" name="volume">&#x26F6;</button>
+			</div>
+		</div>
+
+		<script src="scripts.js"></script>
+	</body>
+</html>
