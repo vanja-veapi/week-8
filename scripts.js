@@ -14,8 +14,8 @@ window.addEventListener("load", function () {
 	let videoEnd = this.document.querySelector("#video__end");
 	let videoCurrentTime = this.document.querySelector("#video__curent");
 
-	this.setInterval(() => (videoCurrentTime.innerHTML = new Date(video.currentTime * 1000).toISOString().substr(14, 5)), 100);
-	videoEnd.innerHTML = new Date(viewerDuration * 1000).toISOString().substr(14, 5);
+	this.setInterval(() => (videoCurrentTime.innerHTML = new Date(video.currentTime * 1000).toISOString().substr(14, 5)), 100); //Dokle je video stigao
+	videoEnd.innerHTML = new Date(viewerDuration * 1000).toISOString().substr(14, 5); // Koliko traje video
 	//Foreach
 	skipButtons.forEach((sBtn) => {
 		sBtn.addEventListener("click", skipBtn);
@@ -115,6 +115,10 @@ window.addEventListener("load", function () {
 			return (video.volume = 0.5);
 		}
 	}
+	/**
+	 *
+	 * Koliko je proslo vremena od pocetka klipa do kraja, izrazeo u procentima
+	 */
 	function handleProcess() {
 		let percent = 100 * (video.currentTime / video.duration);
 		return (progressFilled.style.flexBasis = `${percent}%`);
